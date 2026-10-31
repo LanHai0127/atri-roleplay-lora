@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+env/
+venv/
+
+# Models and adapters
+models/
+outputs/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.gguf
+*.tar.gz
+*.zip
+
+# Data and local artifacts
+data/
+eval/
+logs/
+torchinductor_LanHai/
+亚托莉/
+tmp_*
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
