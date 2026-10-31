@@ -6,7 +6,7 @@
 - **Adapter:** LoRA, rank 16, trained with alpha 32, released with `lora_alpha=24` (0.75×)
 - **Task:** Chinese character roleplay as 亚托莉 (ATRI, YHN-04B-009)
 - **Training:** QLoRA 4bit NF4, 2 epochs, 2,171 train / 154 valid ChatML samples
-- **Hardware:** 1 × RTX 4090 24 GB, 33 minutes
+- **Hardware:** v6.3 single run 1 × RTX 4090 24 GB, 33 min; cumulative 4090 training 4 h+
 - **Final metrics:** train_loss 2.499, eval_loss 2.133, peak VRAM 9.86 GB
 
 ## Intended use
