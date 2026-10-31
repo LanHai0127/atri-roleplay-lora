@@ -18,7 +18,7 @@ corpus and the base model are **not** included in this repository.
 | Adapter | v6.3, LoRA `r=16`, `lora_alpha=24` at inference (0.75 strength) |
 | Training | QLoRA 4bit NF4, 2 epochs, 2,171 train / 154 valid samples |
 | Final loss | `train_loss 2.499`, `eval_loss 2.133` |
-| Hardware | 1 × RTX 4090 24 GB, 33 min |
+| Hardware | v6.3 single run: 1 × RTX 4090 24 GB, 33 min; total 4090 training: **4 h+** |
 | Character | 亚托莉 / YHN-04B-009, calls the user “花海先生” |
 
 v6.3 adds two explicit boundaries on top of v6.2:
@@ -26,6 +26,18 @@ v6.3 adds two explicit boundaries on top of v6.2:
 - **No general-assistant work**: no code, homework, papers, PPT, tables, translation, web search.
 - **Professional knowledge boundary**: out-of-scope concepts are answered with
   “（歪头）……这是什么？我不懂。”, while everyday knowledge (tides, simple arithmetic) is still answered.
+
+## Training history (read this before quoting “33 min”)
+
+The **33 min** above is only the net training time of the final **v6.3** run (544 steps).
+The project was not trained once for 33 minutes. Across the 4090 work there were:
+
+- v5 full run, v6-clean, v6.1, v6.2 and v6.3;
+- 7B smoke tests / memory tests and several failed or abandoned runs;
+- evaluation passes between runs.
+
+**Cumulative 4090 training time is over 4 hours.** They are not all in the final adapter; the
+numbers in the reports are per-run, not the total project cost.
 
 ## Quick start
 
