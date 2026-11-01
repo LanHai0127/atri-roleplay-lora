@@ -1,0 +1,18 @@
+[Unit]
+Description=ATRI llama-server (Qwen2.5-7B Q8_0 + v7 LoRA)
+After=network.target
+
+[Service]
+Type=simple
+# ↓ 这两行改成你的用户名和实际目录
+User=lanhai
+WorkingDirectory=/home/lanhai/atri-deploy/q8
+ExecStart=/home/lanhai/atri-deploy/q8/start.sh
+Restart=on-failure
+RestartSec=5
+# 模型 mmap 走 page cache，低优先级避免抢占交互进程
+Nice=5
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
